@@ -194,14 +194,56 @@
   intake.pre > 7000 & intake.pre <= 8000
   
   
+######################
+### Implicit loops ###
+######################
+# A common application of loops is to apply a function to each element of
+# a set of values or vectors and collect the results in a single structure.
+  # Load library for 'thuesen' dataset
+  library(ISwR)
+  thuesen
   
+  # Compute the mean of the emlements in 'thuesen' data frame into a list.
+  lapply(thuesen, mean, na.rm=T)
   
+  # Instead of a list, Simplify the result in a vector or matrix if possible.
+  sapply(thuesen, mean, na.rm=T)
   
+  # To repeat a computation a number of times and save each execution to a
+  # vector, use 'replicate'
+  replicate(10, mean(rexp(20)))
+
+  # apply allows you to apply a function to the rows or columns of a matrix.
+  # In the following example we get the min value for each column (arg 2)
+  m <- matrix(rnorm(12),4)
+  m
+  apply(m, 2, min)
   
+  # the function tapply allows you to create tables (hence the ‘t’) of the
+  # value of a function on subgroups defined by its second argument, which
+  # can be a factor or a list of factors.
+  library(ISwR)
+  energy
+  # In this case we apply the median to expend to the categories of stature.
+  tapply(energy$expend, energy$stature, median)
+
+############
+### Sort ###
+############
+  # Use of the sort function
+  intake$post
+  sort(intake$post)
   
-  
-  
-  
+  # Often you need to sort a series of variables according to the values of
+  # some other variables. For that, you first compute an ordering of a variable.
+  o <- order(intake$post)
+  # The function order defines an order to be apply to a different variable in
+  # form of vector of indexes. Our order is saved in 'o'.
+  # To apply the order to a variable:
+  intake$post[o]
+  intake$pre[o]
+  # Sorting by several criteria is done simply by having several arguments to
+  # order. For instance, "order(sex,age)".
   
   
   
