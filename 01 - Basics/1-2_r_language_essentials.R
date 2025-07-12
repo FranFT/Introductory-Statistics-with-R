@@ -109,3 +109,22 @@ c("value", NA, "value")
   # into a matrix
   cbind(A=1:4, B=5:8, C=9:12)
   rbind(A=1:4,B=5:8,C=9:12)
+
+###############
+### Factors ###
+###############
+# It is common in statistical data to have categorical variables, indicating
+# some subdivision of data. This is a data structure that (among other things)
+# makes it possible to assign meaningful names to the categories.
+  pain <- c(0, 3, 2, 2, 1)
+  fpain <- factor(pain, levels=0:3)
+  levels(fpain) <- c("none", "mild", "medium", "severe")
+  
+  # Extract the numerical coding as numbers. Notice that the original input
+  # coding in terms of numbers 0–3 has disappeared; the internal representation
+  # of a factor always uses numbers starting at 1.
+  as.numeric(fpain)
+  # 
+  levels(fpain)
+  
+  
