@@ -153,3 +153,57 @@
   d
   # Components can be accessed using $
   d$intake.pre
+
+################
+### Indexing ###
+################
+  # To access the thrid element:
+  intake.pre <- c(5260,5470,5640,6180,6390,6515,6805,7515,7515,8230,8770)
+  intake.pre[3]
+  # You can assign a value to the third element
+  intake.pre[3] <- 5641
+  # If you want a sub-vector for specific elements, you can index with a vector.
+  intake.pre[c(3,5,7)]
+  # If you want the first five elements you can use a:b
+  intake.pre[1:5]
+  # Negative indexing: You can get all the observations except for the ones
+  # indexed negative. Example - Return everything except observations 3, 5 and 7.
+  intake.pre[-c(3,5,7)]
+
+#############################
+### Conditional selection ###
+#############################
+  # In practice, you often need to extract data that satisfy certain criteria
+  # or condition.
+  intake.pre <- c(5260,5470,5640,6180,6390,6515,6805,7515,7515,8230,8770)
+  intake.post <- c(3910,4220,3885,5160,5645,4680,5265,5975,6790,6900,7335)
+  # Get the intake post of all the individuals which intake pre is greater than
+  # 7000 units.
+  intake.post[intake.pre > 7000]
+  # This kind of expression makes sense only if the variables that go
+  # into the relational expression have the same length as the variable being
+  # indexed
+  
+  # You can combine several expressions using logical operators AND, OR and NOT.
+  # AND = &
+  # OR = |
+  # NOT = !
+  intake.post[intake.pre > 7000 & intake.pre <= 8000]
+
+  # Using a logical expression as index results in a logical vector.
+  intake.pre > 7000 & intake.pre <= 8000
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
