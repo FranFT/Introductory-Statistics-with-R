@@ -141,3 +141,15 @@
   # Extract a single component from the list
   mylist$before
   
+###################
+### Data Frames ###
+###################
+  # A data frame is a list of vectors and/or factors of the same length that
+  # are related "across" such that data in the same position come from the same
+  # experimental unit (subject, animal, etc.).
+  intake.pre <- c(5260,5470,5640,6180,6390,6515,6805,7515,7515,8230,8770)
+  intake.post <- c(3910,4220,3885,5160,5645,4680,5265,5975,6790,6900,7335)
+  d <- data.frame(intake.pre, intake.post)
+  d
+  # Components can be accessed using $
+  d$intake.pre
