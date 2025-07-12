@@ -124,7 +124,20 @@ c("value", NA, "value")
   # coding in terms of numbers 0–3 has disappeared; the internal representation
   # of a factor always uses numbers starting at 1.
   as.numeric(fpain)
-  # 
+  # Extract the categories as strings.
   levels(fpain)
-  
+
+##############
+### Lists ###
+#############
+  # sometimes is useful to combine a collection of objects into a larger
+  # composite object. This can be done using lists. Example:
+  # Define 2 arrays
+  a <- c(5260,5470,5640,6180,6390)
+  b <- c(3910,4220,3885,5160,5645)
+  # Combine them into a list:
+  mylist <- list(before=a, after=b)
+  mylist
+  # Extract a single component from the list
+  mylist$before
   
