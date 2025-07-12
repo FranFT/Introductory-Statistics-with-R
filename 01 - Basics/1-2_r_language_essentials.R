@@ -2,22 +2,22 @@
 ### Vectors ###
 ###############
 
-# String vector
-c("Test","Test2","Test")
-
-# Integer vector
-c(1,2,3)
-
-# Logical vector
-c(T,F,T,F)
-# Similar to:
-c(TRUE, FALSE, TRUE, FALSE)
-
-### Escape characters with \ ###
-cat("What is \"R\"?\n")
-
-### Missing values are represented by NA ###
-c("value", NA, "value")
+  # String vector
+  c("Test","Test2","Test")
+  
+  # Integer vector
+  c(1,2,3)
+  
+  # Logical vector
+  c(T,F,T,F)
+  # Similar to:
+  c(TRUE, FALSE, TRUE, FALSE)
+  
+  ### Escape characters with \ ###
+  cat("What is \"R\"?\n")
+  
+  ### Missing values are represented by NA ###
+  c("value", NA, "value")
 
 ########################
 ### Creating vectors ###
