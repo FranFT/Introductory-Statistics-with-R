@@ -77,7 +77,35 @@ c("value", NA, "value")
 ###########################
 ### Matrices and arrays ###
 ###########################
+### Changing array dimensions to become a matrix.
+  # Define an array
+  x <- 1:12
+  x
+  # Change array dimension to be 3 rows and 4 columns. Notice is column-major
+  # meaning, the elements from the first column follows the numbers on the second
+  # and so on.
+  dim(x) <- c(3,4)
+  x
+
+### Defining a matrix
+  # The following command creates a matrix. The byrow=T parameters switch the
+  # matrix creation to be row-major, meaning, the numbers from the first row
+  # follows the numbers on the second column and so on.
+  matrix(1:12, nrow=3, byrow=T)
+  # If we remove it, the matrix will be column-major again.
+  matrix(1:12, nrow=3)
   
-
-
-
+  # To rename row names:
+  # Notice that LETTERS is a R-built-in variable that contains the capital letters.
+  # Similar to that: letters (lower letters), month.name and month.abb.
+  x <- matrix(1:12, nrow=3, byrow=T)
+  rownames(x) <- LETTERS[1:3]
+  x
+  
+  # To perform the transpose of any matrix
+  t(x)
+  
+  # You can join vectors together, columnwise or rowwise using 'cbind' and 'rbind'
+  # into a matrix
+  cbind(A=1:4, B=5:8, C=9:12)
+  rbind(A=1:4,B=5:8,C=9:12)
