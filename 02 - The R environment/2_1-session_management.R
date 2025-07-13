@@ -35,8 +35,9 @@
   data("thuesen")
   
   # data() will look for files whose base name matches the given name. It also
-  # searches in the sub-directory "data" if it exists. Files with .tab extension
-  # are read using read.table and .R file are executed as source files.
+  # searches in the sub-directory "data" if it exists.
+    # Files with .tab extension are read using read.table.
+    # Files with .R file are executed as source files.
   # load_data_test.R is located under "/data" folder. Inside, the variable
   # "my_variable" is created. After using "data()" function, we can reference
   # it in this script.
